@@ -4,7 +4,6 @@ import { Heart } from "lucide-react";
 const ProductCard = ({ product }) => {
   const [currentImage, setCurrentImage] = useState(0);
 
-  // Ganti gambar otomatis tiap 2.5 detik
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prev) =>
@@ -31,7 +30,7 @@ const ProductCard = ({ product }) => {
           className="w-full h-56 object-cover transition-all duration-500"
         />
 
-        {/* Tombol Wishlist (Love jadi merah saat hover) */}
+        {/* Tombol Wishlist */}
         <button className="absolute top-3 right-3 bg-white p-2 rounded-full shadow-md transition group hover:bg-red-100">
           <Heart className="w-5 h-5 text-gray-500 group-hover:text-red-600 group-hover:fill-red-600 transition" />
         </button>
@@ -86,13 +85,61 @@ export default function ProductList() {
         "https://picsum.photos/300/200?random=18",
       ],
     },
+    {
+      id: 5,
+      name: "Handbag Premium",
+      price: 320000,
+      images: [
+        "https://picsum.photos/300/200?random=19",
+        "https://picsum.photos/300/200?random=20",
+      ],
+      badge: "HOT",
+    },
+    {
+      id: 6,
+      name: "Clutch Party",
+      price: 175000,
+      images: [
+        "https://picsum.photos/300/200?random=21",
+        "https://picsum.photos/300/200?random=22",
+      ],
+    },
+    {
+      id: 7,
+      name: "Travel Bag Besar",
+      price: 400000,
+      images: [
+        "https://picsum.photos/300/200?random=23",
+        "https://picsum.photos/300/200?random=24",
+      ],
+    },
+    {
+      id: 8,
+      name: "Waist Bag Sporty",
+      price: 120000,
+      images: [
+        "https://picsum.photos/300/200?random=25",
+        "https://picsum.photos/300/200?random=26",
+      ],
+      badge: "NEW",
+    },
   ];
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 p-6">
-      {dummyProducts.map((product) => (
-        <ProductCard key={product.id} product={product} />
-      ))}
+    <div className="p-6 mt-28">
+      {/* Grid Card */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        {dummyProducts.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+      </div>
+
+{/* Tombol Lihat Semua */}
+<div className="flex justify-center mt-8">
+  <button className="px-6 py-2 border-2 border-blue-600 text-blue-600 rounded-xl shadow-md hover:bg-blue-600 hover:text-white transition duration-300">
+    Tampilkan Semua
+  </button>
+</div>
     </div>
   );
 }

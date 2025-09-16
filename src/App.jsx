@@ -1,6 +1,10 @@
 import Navbar from "./components/Navbar";
 import HeroCarousel from "./components/HeroCarousel";
 import ProductList from "./components/ProductList";
+import CategorySection from "./components/CategorySection";
+import Reviews from "./components/Reviews";
+import Footer from "./components/Footer";
+
 
 export default function App() {
   return (
@@ -8,9 +12,9 @@ export default function App() {
       <Navbar />
       <HeroCarousel />
       <ProductList />
-      <footer className="bg-black text-white text-center py-6 mt-8">
-        <p>© 2025 TokoTas. Semua Hak Dilindungi.</p>
-      </footer>
+      <CategorySection />
+      <Reviews />
+      <Footer />
     </div>
   );
 }
